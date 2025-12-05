@@ -8,11 +8,11 @@ class Ninja{
 
 
     sayName(){
-        console.log("ninja :" + this.name);
+        console.log("Name :" + this.name);
     }
 
     showState(){
-        console.log ("Name : " + this.name + "health : " + this.health + "speed : " + this.speed + "strength : " + this.strength);
+        console.log ("Name : " + this.name + " " + "health : " + this.health + " " + "speed : " + this.speed + " " + "strength : " + this.strength);
 
     }
     drinkSake(){
