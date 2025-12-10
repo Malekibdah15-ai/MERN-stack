@@ -9,7 +9,7 @@ const Blue = (props)=>{
 
         <ul>
             {Colors.map((item)=>
-            <li>{item}</li>
+            <li className="flex items-center w-7xl m-auto ">{item}</li>
         )}
         </ul>
         

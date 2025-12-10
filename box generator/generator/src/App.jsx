@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-    <Color  setArray = {setArray} array={array} />
+    <Color  setArray = {setArray} />
     <Blue Colors = {array} />
 
     </>
