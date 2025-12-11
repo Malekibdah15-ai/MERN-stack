@@ -1,20 +1,13 @@
-import React,{useState} from "react";
+import React from "react";
 
-const Blue = (props)=>{
+const Blue = ({ Colors }) => {
+  return (
+    <div className="flex flex-row flex-wrap gap-4 w-7xl m-auto">
+      {Colors.map((item, index) => (
+        <div key={index} className={`w-[200px] h-[200px] bg-${item}-600`}></div>
+      ))}
+    </div>
+  );
+};
 
-    const {Colors} = props
-
-    return(
-        <>
-
-        <ul>
-            {Colors.map((item)=>
-            <li className="flex items-center w-7xl m-auto ">{item}</li>
-        )}
-        </ul>
-        
-        
-        </>
-    )
-}
-export default Blue
+export default Blue;
