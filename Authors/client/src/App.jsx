@@ -1,14 +1,19 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Create from './component/create'
+// import AuthorForm from './component/form'
+import Update from './component/update'
+import List from './component/list'
+import {Routes, Link, Route } from "react-router-dom"
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
     <>
-      
+      <Routes>
+        <Route path='/' element={<List/>}/>
+        <Route path = 'authors/:id' element= {<Update/>}/>
+        <Route path='authors/new' element = {<Create/>}/>
+      </Routes>
     </>
   )
 }

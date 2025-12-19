@@ -1,4 +1,4 @@
-const {plugin} = require("mongoose");
+
 const Author = require('../model/author.model')
 
 module.exports.createAuthor = (req, res)=>{
@@ -7,28 +7,32 @@ module.exports.createAuthor = (req, res)=>{
         name
     })
     .then(author=> res.json(author))
-    .catch(error=> res.json(error));
+    .catch(err => res.status(400).json(err));
+
 }
 
 module.exports.getAllAuthors = (req, res)=>{
-    Author.find({})
+    Author.find()
     .then(product=> res.json(product))
-    .catch(error=> res.json(error));
-
+    .catch(err => res.status(400).json(err));
+    
 }
 module.exports.getAuthorById = (req, res)=>{
     Author.findOne({_id: req.params.id})
      .then(author=> res.json(author))
-     .catch(error=> res.json(error));
+     .catch(err => res.status(400).json(err));
+;
 }
 
 module.exports.deleteById = (req, res)=>{
     Author.findByIdAndDelete({_id: req.params.id})
      .then(author=> res.json(author))
-     .catch(error=> res.json(error));
+     .catch(err => res.status(400).json(err));
+
 }
 module.exports.updateAuthor = (req, res)=>{
     Author.findByIdAndUpdate({_id: req.params.id}, req.body,{new: true})
      .then(author=> res.json(author))
-     .catch(error=> res.json(error));
+     .catch(err => res.status(400).json(err));
+
 }

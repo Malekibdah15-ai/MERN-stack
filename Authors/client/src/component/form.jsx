@@ -1,19 +1,25 @@
 import React from "react";
 import { useState } from "react";
-const AuthorForm = ()=>{
-    const [name, setName] = useState("");
+const AuthorForm = (props)=>{
 
-    const handleSubmit = (e)=>{
-        e.preventDefault();
+    const {functionProp, initialName, errors  } = props
+    const [name, setName] = useState(initialName );
 
-    }
+  const handleSubmit = e => {
+    e.preventDefault();
+    functionProp({ name });
+    setName("");
+};
+
 
     return(
         <>
         <form onSubmit={handleSubmit}> 
-            <label htmlFor="">Name</label>
-            <input type="text" value={name} onChange={(e)=> setName(e.target.valueAsDate)} />
+            
 
+            <label htmlFor="">Name</label>
+            <input type="text" value={name} onChange={(e)=> setName(e.target.value)} />
+            
             <button >submit</button>
 
         </form>
