@@ -28,7 +28,6 @@ const List = ()=>{
                  setAuthors(authors.filter(author => author._id !== id));              
             }catch(error){
                 console.log(error);
-                
             }
         }
         del();
